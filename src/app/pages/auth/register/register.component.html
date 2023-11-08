@@ -1,0 +1,59 @@
+<div id="backgrund">
+  <form [formGroup]="registerForm" novalidate (ngSubmit)="save(registerForm.value, registerForm.valid)">
+
+    <mat-form-field class="example-full-width">
+      <mat-label>First Name</mat-label>
+      <input matInput placeholder="Max" formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Last Name</mat-label>
+      <input matInput placeholder="Muster" formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Street</mat-label>
+      <input matInput placeholder="Musterstreet 14" formControlName="street">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>ZIP</mat-label>
+      <input matInput placeholder="3510" formControlName="zip">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>City</mat-label>
+      <input matInput placeholder="Bern" formControlName="city">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Country</mat-label>
+      <input matInput placeholder="Schweiz" formControlName="country">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Phone</mat-label>
+      <input matInput placeholder="031 344 43 43" formControlName="phone">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Mobile Phone</mat-label>
+      <input matInput placeholder="079 844 48 48" formControlName="mobilePhone">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>E-Mail</mat-label>
+      <input matInput placeholder="example@test.com" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Word123456-_." formControlName="password">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">
+      Regist
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="how_to_reg"></mat-icon>
+    </button>
+  </form>
+</div>

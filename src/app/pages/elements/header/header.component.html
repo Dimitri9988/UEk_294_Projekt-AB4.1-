@@ -1,0 +1,92 @@
+<mat-toolbar class="header">
+  <span>Gemstone Galleria</span>
+  <span class="example-spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menuCategory">
+    Category
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="category"></mat-icon>
+  </button>
+  <mat-menu #menuCategory="matMenu">
+    <button mat-menu-item routerLink="categorys/list">
+      List Category
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="list"></mat-icon>
+    </button>
+    <button mat-menu-item routerLink="categorys/show">
+      Show Category
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="visibility"></mat-icon>
+    </button>
+    <button mat-menu-item routerLink="/category/create">
+      Create Category
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon>
+    </button>
+    <button mat-menu-item routerLink="categorys/edit">
+      Edit Category
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+    </button>
+    <button mat-menu-item routerLink="categorys/delete">
+      Delete Category
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+    </button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="menuProduct">
+    Product
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_bag"></mat-icon>
+  </button>
+  <mat-menu #menuProduct="matMenu">
+    <button mat-menu-item>
+      List Category
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="list"></mat-icon>
+    </button>
+    <button mat-menu-item>
+      Show Product
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="visibility"></mat-icon>
+    </button>
+    <button mat-menu-item>
+      Create Product
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon>
+    </button>
+    <button mat-menu-item>
+      Edit Product
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+    </button>
+    <button mat-menu-item>
+      Delete Product
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+    </button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="menuUser">
+    User
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person"></mat-icon>
+  </button>
+  <mat-menu #menuUser="matMenu">
+    <button mat-menu-item>
+      List User
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="list"></mat-icon>
+    </button>
+    <button mat-menu-item>
+      Promote User
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="admin_panel_settings"></mat-icon>
+    </button>
+    <button mat-menu-item>
+      Create User
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon>
+    </button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="menuLogin">
+    Login
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="login"></mat-icon>
+  </button>
+  <mat-menu #menuLogin="matMenu">
+    <button mat-menu-item routerLink="/auth/register">
+      Sign up
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="how_to_reg"></mat-icon>
+    </button>
+
+    <button mat-menu-item routerLink="/auth/login">
+      Sign in
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="login"></mat-icon>
+    </button>
+
+  </mat-menu>
+
+
+</mat-toolbar>

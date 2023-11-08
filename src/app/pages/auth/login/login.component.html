@@ -1,0 +1,18 @@
+<div id="background">
+  <form [formGroup]="loginForm" novalidate (ngSubmit)="save(loginForm.value, loginForm.valid)">
+    <mat-form-field class="example-full-width">
+      <mat-label>E-Mail</mat-label>
+      <input matInput placeholder="example@test.com" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Word123456-_." formControlName="password">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">
+      Login
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="login"></mat-icon>
+    </button>
+  </form>
+</div>
