@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ProductControllerService, ProductShowDto} from "../../../openapi-client";
 
 @Component({
   selector: 'pm-list',
@@ -8,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class ListComponent {
 
+  allProducts: ProductShowDto[] = []
+
+  constructor(
+      private  productControllerService: ProductControllerService
+  )
+  {
+    this.productControllerService.getAllProducts().subscribe( products =>
+    {
+      this.allProducts = products
+      console.log(this.allProducts)
+    })
+  }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {UserShowDto} from "../../../openapi-client";
 
 @Component({
   selector: 'pm-list',
@@ -7,5 +8,4 @@ import { Component } from '@angular/core';
   standalone: true,
 })
 export class ListComponent {
-
 }

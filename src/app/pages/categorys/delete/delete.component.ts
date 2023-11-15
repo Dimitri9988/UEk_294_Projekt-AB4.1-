@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {CategoryControllerService} from "../../../openapi-client";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'pm-delete',
@@ -7,5 +9,11 @@ import { Component } from '@angular/core';
   standalone: true,
 })
 export class DeleteComponent {
+  constructor(
+      private categoryControllerService: CategoryControllerService,
+      private activatedRoute: ActivatedRoute
+  ) {
 
+  }
 }
+//deleteCategoryById

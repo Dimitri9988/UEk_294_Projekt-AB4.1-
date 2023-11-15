@@ -22,7 +22,7 @@ const routes: Routes = [
     loadComponent: () => import('./show/show.component').then(v => v.ShowComponent)
   },
   {
-    path: 'delete',
+    path: 'delete/:id',
     loadComponent: () => import('./delete/delete.component').then(v => v.DeleteComponent)
   }
 ];

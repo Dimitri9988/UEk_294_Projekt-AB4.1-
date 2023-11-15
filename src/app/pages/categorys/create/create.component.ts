@@ -53,11 +53,6 @@ export class CreateComponent implements OnInit{
       })
     }
 
-
-
-
-
-
     this.createCategoryForm = this.fb.group({
       active: [false, Validators.required],
       name: ['', Validators.required]

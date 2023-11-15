@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit{
 
   save(value: any, valid: boolean): void {
 
-    if(valid) {
+    if(this.registerForm.valid) {
       this.userControllerService.register(this.registerForm.value as RegisterDto).subscribe(user => {
         this.user = user;
         this.router.navigateByUrl('/auth/login').then();
