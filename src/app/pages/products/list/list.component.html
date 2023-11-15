@@ -1,1 +1,28 @@
-<p>list works!</p>
+
+<div class="gap-4 flex flex-wrap">
+    <div *ngFor="let product of allProducts" class="w-60 m-5 border-2 border-black rounded-md">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <h2>{{ product.name }}</h2>
+            </mat-card-header>
+            <img class="h-48 ml-4 mr-4 " mat-card-image [src]="product.image">
+            <mat-card-content>
+                <p>Preis : {{ product.price}}</p>
+                <p>Stückzahl : {{ product.stock }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" class="p-5">Show Product</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

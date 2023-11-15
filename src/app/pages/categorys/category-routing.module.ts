@@ -17,14 +17,6 @@ const routes: Routes = [
     path: 'list',
     loadComponent: () => import('./list/list.component').then(v => v.ListComponent)
   },
-  {
-    path: 'show',
-    loadComponent: () => import('./show/show.component').then(v => v.ShowComponent)
-  },
-  {
-    path: 'delete/:id',
-    loadComponent: () => import('./delete/delete.component').then(v => v.DeleteComponent)
-  }
 ];
 
 @NgModule({

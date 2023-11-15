@@ -31,7 +31,7 @@ const routes: Routes = [
     canActivate: [authGuard]
   },
   {
-    path: "products/edit",
+    path: "products/edit/:id",
     loadComponent: () =>
       import(`./pages/products/edit/edit.component`).then(v => v.EditComponent)
   },
