@@ -15,6 +15,7 @@ import { ShowComponent } from './pages/categorys/show/show.component';
 import { PromoteComponent } from './pages/users/promote/promote.component';
 import {ApiModule, Configuration} from './openapi-client';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {AuthInterceptor} from "./interceptor/auth.interceptor";
 
 
 
@@ -38,16 +39,12 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
   ],
   providers: [
     {
-      provide: HTTP_INTERCEPTORS
-    }
-  ]
-  providers: [
-    {
       provide: HTTP_INTERCEPTORS,
       multi: true,
-      useClass: AuthorizationInterceptor
+      useClass: AuthInterceptor
     }
   ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

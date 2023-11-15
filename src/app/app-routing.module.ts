@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {authGuard} from "./guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -12,51 +13,22 @@ const routes: Routes = [
     loadComponent: () =>
       import(`./pages/auth/register/register.component`).then(v => v.RegisterComponent)
   },
-  /**
-  {
-    path: "categorys/create",
-    loadComponent: () =>
-      import(`./pages/categorys/create/create.component`).then(v => v.CreateComponent)
-  },
-  {
-    path: "categorys/delete",
-    loadComponent: () =>
-      import(`./pages/categorys/delete/delete.component`).then(v => v.DeleteComponent)
-  },
-  {
-    path: "categorys/edit",
-    loadComponent: () =>
-      import(`./pages/categorys/edit/edit.component`).then(v => v.EditComponent)
-  },
-  {
-    path: "categorys/list",
-    loadComponent: () =>
-      import(`./pages/categorys/list/list.component`).then(v => v.ListComponent)
-  },
-  {
-    path: "categorys/show",
-    loadComponent: () =>
-      import(`./pages/categorys/show/show.component`).then(v => v.ShowComponent)
-  },
-*/
   {
     path: "category",
     loadChildren: () =>
-      import('./pages/categorys/category.module').then(v => v.CategoryModule)
+      import('./pages/categorys/category.module').then(v => v.CategoryModule),
   },
-
-
-
-
   {
     path: "products/create",
     loadComponent: () =>
-      import(`./pages/products/create/create.component`).then(v => v.CreateComponent)
+      import(`./pages/products/create/create.component`).then(v => v.CreateComponent),
+    canActivate: [authGuard]
   },
   {
     path: "products/delete",
     loadComponent: () =>
-      import(`./pages/products/delete/delete.component`).then(v => v.DeleteComponent)
+      import(`./pages/products/delete/delete.component`).then(v => v.DeleteComponent),
+    canActivate: [authGuard]
   },
   {
     path: "products/edit",

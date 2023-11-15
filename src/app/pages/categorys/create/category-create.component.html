@@ -1,1 +1,14 @@
-<p>create works!</p>
+<div id="background">
+  <form [formGroup]="createCategoryForm" novalidate (ngSubmit)="save(createCategoryForm.value, createCategoryForm.valid)">
+    <mat-form-field class="example-full-width">
+      <mat-label>Category Name</mat-label>
+      <input matInput placeholder="Gaming, Haushalt, Essen..." formControlName="name">
+    </mat-form-field>
+    <mat-slide-toggle formControlName="active">Activate ON or OFF</mat-slide-toggle>
+    <p>Activate Status: {{createCategoryForm.get('active')?.value}}</p>
+    <button mat-raised-button color="primary">
+      Create Category
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="login"></mat-icon>
+    </button>
+  </form>
+</div>
