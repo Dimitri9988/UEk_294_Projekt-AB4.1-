@@ -3,6 +3,8 @@ import {ProductControllerService, ProductShowDto} from "../../../openapi-client"
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {NgForOf} from "@angular/common";
+import {RouterModule} from "@angular/router";
+import {MatIconModule} from "@angular/material/icon";
 
 @Component({
   selector: 'pm-list',
@@ -12,7 +14,9 @@ import {NgForOf} from "@angular/common";
   imports: [
     MatCardModule,
     MatButtonModule,
-    NgForOf
+    NgForOf,
+    RouterModule,
+    MatIconModule
   ]
 })
 export class ListComponent {

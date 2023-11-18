@@ -25,15 +25,9 @@ const routes: Routes = [
     canActivate: [authGuard]
   },
   {
-    path: "products/delete",
-    loadComponent: () =>
-      import(`./pages/products/delete/delete.component`).then(v => v.DeleteComponent),
-    canActivate: [authGuard]
-  },
-  {
     path: "products/edit/:id",
     loadComponent: () =>
-      import(`./pages/products/edit/edit.component`).then(v => v.EditComponent)
+      import(`./pages/products/create/create.component`).then(v => v.CreateComponent)
   },
   {
     path: "products/list",
@@ -41,14 +35,9 @@ const routes: Routes = [
       import(`./pages/products/list/list.component`).then(v => v.ListComponent)
   },
   {
-    path: "products/show",
+    path: "products/show/:id",
     loadComponent: () =>
       import(`./pages/products/show/show.component`).then(v => v.ShowComponent)
-  },
-  {
-    path: "users/create",
-    loadComponent: () =>
-      import(`./pages/users/create/create.component`).then((v => v.CreateComponent))
   },
   {
     path: "users/list",

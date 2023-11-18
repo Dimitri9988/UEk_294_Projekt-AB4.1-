@@ -11,12 +11,11 @@
                 <p>Stückzahl : {{ product.stock }}</p>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-raised-button color="primary" class="p-5">Show Product</button>
+                <button mat-raised-button color="primary" class="p-5" routerLink="/products/show/{{product.id}}">Show Product</button>
             </mat-card-actions>
         </mat-card>
     </div>
 </div>
-
 
 
 

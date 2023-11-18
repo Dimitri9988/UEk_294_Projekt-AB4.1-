@@ -1,1 +1,44 @@
-<p>create works!</p>
+<div id="background">
+    <form [formGroup]="createProductForm" novalidate (ngSubmit)="save(createProductForm.value, createProductForm.valid)">
+        <mat-form-field class="example-full-width">
+            <mat-label>Product Name</mat-label>
+            <input matInput placeholder="Löffffell, Gabel, Messer..." formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>SKU Number</mat-label>
+            <input matInput placeholder="Löffffell, Gabel, Messer..." formControlName="sku">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Image Path</mat-label>
+            <input matInput placeholder="Löffffell, Gabel, Messer..." formControlName="image">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Product Price</mat-label>
+            <input matInput placeholder="Löffffell, Gabel, Messer..." formControlName="price">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Stock Number</mat-label>
+            <input matInput placeholder="Löffffell, Gabel, Messer..." formControlName="stock">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Löffffell, Gabel, Messer..." formControlName="description">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Löffffell, Gabel, Messer..." formControlName="categoryId">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary">
+            Create Product
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="login"></mat-icon>
+        </button>
+
+    </form>
+</div>
