@@ -25,7 +25,6 @@ export class ListComponent {
 
   allCategories: CategoryShowDto[] = [];
   constructor(
-
       private categoryControllerService: CategoryControllerService
   )
   {
