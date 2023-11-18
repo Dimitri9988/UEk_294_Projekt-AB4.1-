@@ -19,21 +19,23 @@ import {Router} from "@angular/router";
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent implements OnInit {
   user!: UserShowDto;
 
   registerForm!: FormGroup;
+
   constructor(
     private readonly userControllerService: UserControllerService,
     private fb: FormBuilder,
     private router: Router
-  ){
+  ) {
   }
 
+  //
   save(value: any, valid: boolean): void {
-
-    if(this.registerForm.valid) {
-      this.userControllerService.register(this.registerForm.value as RegisterDto).subscribe(user => {
+    //Wenn die Registrierung Valid ist, wird der Benutzer register und an die Loginseite weiter geleitet
+    if (this.registerForm.valid) {
+      this.userControllerService.registerWithoutAdminRights(this.registerForm.value as RegisterDto).subscribe(user => {
         this.user = user;
         this.router.navigateByUrl('/auth/login').then();
 
@@ -44,14 +46,14 @@ export class RegisterComponent implements OnInit{
   }
 
 
-
+  //Formular zum Angeben der Daten zum Registrar und deren Anforderungen
   ngOnInit() {
     this.registerForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
       lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
       street: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
       zip: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(10)]],
-      city:['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
+      city: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
       country: ['', Validators.required],
       phone: ['', Validators.maxLength(15)],
       mobilePhone: ['', Validators.maxLength(15)],

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -15,17 +15,19 @@ import {Router} from "@angular/router";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
+
   constructor(private fb: FormBuilder,
-  private readonly userControllerService: UserControllerService,
-  private router: Router
-) {}
+              private readonly userControllerService: UserControllerService,
+              private router: Router
+  ) {
+  }
 
   save(value: any, valid: boolean): void {
-
-    if(valid) {
+    //Wen die Logindaten richtig sind, wird dem Benutzer ein Token erstellt mit seinen Berechtigungen ect.
+    if (valid) {
       this.userControllerService.login(this.loginForm.value as LoginRequestDto).subscribe(token => {
         console.log(token);
         localStorage.setItem('ACCESS_TOKEN', token.token as string);

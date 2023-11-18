@@ -24,23 +24,25 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     ReactiveFormsModule
   ]
 })
-export class CreateComponent implements OnInit{
+export class CreateComponent implements OnInit {
   isEdit = false;
   createProductForm!: FormGroup;
   productId!: number;
+
   constructor(
-      private fb:FormBuilder,
-      private readonly productControllerService: ProductControllerService,
-      private activatedRoute: ActivatedRoute
+    private fb: FormBuilder,
+    private readonly productControllerService: ProductControllerService,
+    private activatedRoute: ActivatedRoute
   ) {
+    //Wen eine ID vorhanden ist, wird ein Produkt nach dieser ausgegeben, um es zu bearbeiten
     if (this.activatedRoute.snapshot.params['id']) {
       this.isEdit = true
-
-      this.productControllerService.getProductById(this.activatedRoute.snapshot.params['id']).subscribe(product =>{
+      this.productControllerService.getProductById(this.activatedRoute.snapshot.params['id']).subscribe(product => {
         this.createProductForm.patchValue(product);
         this.productId = product.id;
       })
     }
+    //Formular zum Ausfüllen der Produckt Daten.
     this.createProductForm = this.fb.group({
       name: ['', Validators.required],
       sku: ['', Validators.required],
@@ -53,13 +55,17 @@ export class CreateComponent implements OnInit{
     })
   }
 
+  //Speicher oder aktualisiert die Daten
   save(value: any, valid: boolean): void {
-    if(valid) {
-      if(this.isEdit) {
+    if (valid) {
+      //wen isEdit true ist, wird ein Produckt mit der passenden ID aktualisiert mit den angepassten Daten
+      if (this.isEdit) {
         this.productControllerService.updateProductById(this.productId, this.createProductForm.value as ProductUpdateDto).subscribe(val => {
 
         })
-      }else {
+      }
+      //Ansonsten erstellt es ein neues Produkt
+      else {
         this.productControllerService.createProduct(this.createProductForm.value as ProductCreateDto).subscribe(val => {
 
         });
@@ -68,8 +74,8 @@ export class CreateComponent implements OnInit{
     } else {
       // Fehlermeldung
     }
-
   }
+
   ngOnInit() {
   }
 }

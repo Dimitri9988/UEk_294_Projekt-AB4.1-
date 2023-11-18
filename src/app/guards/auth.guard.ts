@@ -24,7 +24,7 @@ export const authGuard: CanActivateFn = (route, state) => {
     return true;
   }
   if(localStorage.getItem("ACCESS_TOKEN") && !hasClaim("admin")){
-    router.navigateByUrl('/category/create');
+    router.navigateByUrl('/products/list');
     return false;
   }
   router.navigateByUrl('/auth/login').then();

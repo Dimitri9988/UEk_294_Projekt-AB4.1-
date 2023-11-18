@@ -18,7 +18,7 @@ import {RouterLink} from "@angular/router";
   ]
 })
 export class ListComponent {
-
+  //Nahmen der Tabellen Reihen
   columNames: string[] = ['username', 'Admin Role', 'action'];
   allUsers: UserShowDto[] = []
 
@@ -26,6 +26,7 @@ export class ListComponent {
     private userControllerService: UserControllerService
   )
   {
+    //Gibt alle Benutzer aus und speicher sie in allUsers um sie im HTML zu verwenden
     this.userControllerService.getAllUsers().subscribe( users => {
       this.allUsers = users
       console.log(this.allUsers)

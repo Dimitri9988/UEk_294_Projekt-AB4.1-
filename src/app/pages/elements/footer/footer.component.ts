@@ -13,4 +13,5 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   standalone: true,
   imports: [MatToolbarModule, MatButtonModule, MatIconModule],
 })
-export class FooterComponent {}
+export class FooterComponent {
+}

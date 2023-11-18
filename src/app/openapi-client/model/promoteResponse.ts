@@ -11,16 +11,7 @@
  */
 
 
-export interface UserShowDto { 
-    id?: number;
-    firstName?: string;
-    lastName?: string;
-    street?: string;
-    zip?: string;
-    city?: string;
-    country?: string;
-    phone?: string;
-    mobilePhone?: string;
-    email?: string;
+export interface PromoteResponse { 
+    response?: string;
 }
 
